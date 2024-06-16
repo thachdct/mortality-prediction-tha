@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự đoán khả năng tử vong </title>
+    <link rel="stylesheet" href="styles_2.css">
+    <style>
+        h1 {text-align: center;}
+        h2 {text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#" id="input-info-tab">Nhập thông tin</a></li>
+                <li><a href="#" id="result-tab">Kết quả dự đoán</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <h1>ỨNG DỤNG MÁY HỌC ĐỂ DỰ ĐOÁN KHẢ NĂNG TỬ VONG CỦA BỆNH NHÂN TẠI PHÒNG CHĂM SÓC TÍCH CỰC (ICU)</h1>
+            <h2>Học viên: Nguyễn Ngọc Thạch</h2>
+            <h2>Giảng viên hướng dẫn: TS Vũ Ngọc Thanh Sang</h2>
+            <form id="input-form">
+                <fieldset>
+                    <legend>Thông tin bệnh nhân</legend>
+                    <label for="id">Mã BN:</label>
+                    <input type="number" id="id" name="ID"><br><br>
+                                       
+                    <label for="age">Tuổi:</label>
+                    <input type="number" id="age" name="Tuổi"><br><br>
+                    
+                    <label for="gender">Giới tính:</label>
+                    <input type="text" id="gender" name="Giới tính"><br><br>
+                    
+                    <label for="bmi">BMI:</label>
+                    <input type="number" id="bmi" name="BMI"><br><br>
+                </fieldset>
+                
+                <fieldset>
+                <legend>Đặc điểm bệnh nền</legend>
+                      <input type="checkbox" id="tanghuyetap" name="Tăng huyết áp">
+                      <label for="tanghuyetap"> Tăng huyết á</label><br>
+
+                      <input type="checkbox" id="tieuduong" name="Tiểu đường">
+                      <label for="tieuduong"> Tiểu đường</label><br>
+
+                      <input type="checkbox" id="thieumau" name="Thiếu máu">
+                      <label for="thieumau"> Thiếu máu</label><br><br>
+
+                      <input type="checkbox" id="tangmomau" name="Tăng mỡ máu">
+                      <label for="tangmomau"> Tăng mỡ máu</label><br><br>
+
+                      <input type="checkbox" id="suythan" name="Suy thận">
+                      <label for="suythan"> Suy thận</label><br><br>
+
+                      <input type="checkbox" id="tacphoi" name="Tắc phổi">
+                      <label for="tacphoi"> Tắc phổi</label><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dấu hiệu sinh tồn</legend>
+                    <label for="nhiptim">Nhịp tim:</label>
+                    <input type="number" id="nhiptim" name="Nhịp tim"><br><br>
+                    
+                    <label for="huyetaptamthu">Huyết áp tâm thu:</label>
+                    <input type="number" id="huyetaptamthu" name="Huyết áp tâm thu"><br><br>
+                    
+                    <label for="huyetaptamtruong">Huyết áp tâm trương:</label>
+                    <input type="number" id="huyetaptamtruong" name="Huyết áp tâm trương"><br><br>
+
+                    <label for="nhiptho">Nhịp thở:</label>
+                    <input type="number" id="nhiptho" name="Nhịp thở"><br><br>
+                    
+                    <label for="nhietdo">Nhiệt độ:</label>
+                    <input type="number" id="nhietdo" name="Nhiệt độ"><br><br>
+                    
+                    <label for="spo2">SPO2:</label>
+                    <input type="number" id="spo2" name="SPO2"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Công thức máu</legend>
+                    <label for="huyetcau">Huyết cầu HCT:</label>
+                    <input type="number" id="huyetcau" name="Huyết cầu HCT"><br><br>
+                    
+                    <label for="bachcau">Bạch cầu WBC:</label>
+                    <input type="number" id="bachcau" name="Bạch cầu WBC"><br><br>
+                    
+                    <label for="tieucau">Tiểu cầu PLT:</label>
+                    <input type="number" id="tieucau" name="Tiểu cầu PLT"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Khí máu động mạch</legend>
+                    <label for="ph">PH:</label>
+                    <input type="number" id="ph" name="PH"><br><br>
+                    
+                    <label for="hco3">HCO3:</label>
+                    <input type="number" id="hco3" name="HCO3"><br><br>
+                    
+                    <label for="pco2">PCO2:</label>
+                    <input type="number" id="pco2" name="PCO2"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Chức năng tim</legend>
+                    <label for="probnp">ProBNP:</label>
+                    <input type="number" id="probnp" name="ProBNP"><br><br>
+                    
+                    <label for="ckmb">Creatine kinase CK-MB:</label>
+                    <input type="number" id="ckmb" name="Creatine kinase CK-MB"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Chức năng gan</legend>
+                    <label for="ast">AST:</label>
+                    <input type="number" id="ast" name="AST"><br><br>
+                    
+                    <label for="alt">ALT:</label>
+                    <input type="number" id="alt" name="ALT"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Chức năng đông máu</legend>
+                    <label for="pt">PT:</label>
+                    <input type="number" id="pt" name="PT"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Chức năng thận</legend>
+                    <label for="creatinine">Creatinine:</label>
+                    <input type="number" id="creatinine" name="Creatinine"><br><br>
+                    
+                    <label for="ureanitrogen">Urea nitrogen:</label>
+                    <input type="number" id="ureanitrogen" name="Urea nitrogen"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Điện giải</legend>
+                    <label for="ka">Kali:</label>
+                    <input type="number" id="ka" name="Kali"><br><br>
+                    
+                    <label for="na">Natri:</label>
+                    <input type="number" id="na" name="Natri"><br><br>
+                    
+                    <label for="ca">Canxi:</label>
+                    <input type="number" id="ca" name="Canxi"><br><br>
+
+                    <label for="cl">Clo:</label>
+                    <input type="number" id="cl" name="Clo"><br><br>
+                    
+                    <label for="mg">Magie:</label>
+                    <input type="number" id="mg" name="Magie"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Chỉ số khác</legend>
+                    <label for="glucose">Glucose:</label>
+                    <input type="number" id="glucose" name="Glucose"><br><br>
+                </fieldset>
+
+                <button type="submit">Dự đoán khả năng tử vong</button>
+            </form>
+            <div id="result">
+                <!-- Display results here -->
+                <button id="close-details">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
